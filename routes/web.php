@@ -33,6 +33,8 @@ Route::middleware(['authh'])->group(function () {
 Route::middleware(['authh', 'auth', 'SetSessionData', 'language', 'timezone', 'AdminSidebarMenu'])->group(function () {
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
+    Route::get('/mpesa', 'MpesaController@index')->name('mpesa');
+
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/home/get-totals', 'HomeController@getTotals');
     Route::get('/home/product-stock-alert', 'HomeController@getProductStockAlert');

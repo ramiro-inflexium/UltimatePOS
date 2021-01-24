@@ -34,6 +34,10 @@ Route::middleware(['authh', 'auth', 'SetSessionData', 'language', 'timezone', 'A
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
     Route::get('/mpesa', 'MpesaController@index')->name('mpesa');
+    Route::get('/mpesavalidate', 'MpesaController@mpesavalidate')->name('mpesavalidate');
+
+    Route::any('/callback_url', 'MpesaController@callback_url')->name('callback_url');
+    Route::any('/stk_initiate', 'MpesaController@stk_initiate')->name('callback_url');
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/home/get-totals', 'HomeController@getTotals');

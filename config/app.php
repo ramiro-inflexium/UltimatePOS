@@ -162,7 +162,8 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        Gathuku\Mpesa\MpesaServiceProvider::class,
+        SmoDav\Mpesa\Laravel\ServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -237,7 +238,11 @@ return [
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
         'Datatables' => Yajra\DataTables\Facades\DataTables::class,
-        'Mpesa' => Gathuku\Mpesa\Facades\Mpesa::class
+
+        'STK'       => SmoDav\Mpesa\Laravel\Facades\STK::class,
+        'Simulate'  => SmoDav\Mpesa\Laravel\Facades\Simulate::class,
+        'Registrar' => SmoDav\Mpesa\Laravel\Facades\Registrar::class,
+        'Identity'  => SmoDav\Mpesa\Laravel\Facades\Identity::class,
 
     ]
 ];

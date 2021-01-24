@@ -50,25 +50,27 @@ return [
     |Test phone Number
     |------------------------------------------
     */
-    'test_msisdn ' => '254708374149',
+    'test_msisdn ' => '254714522718',
 
     /*-----------------------------------------
     |Lipa na Mpesa Online callback url
     |------------------------------------------
     */
-    'lnmocallback' => 'https://b2d7e6a4.ngrok.io/api/validate?key=ertyuiowwws',
+    'lnmocallback' => 'https://demo.taverngrill.co.ke/api/validate',
 
      /*-----------------------------------------
     |C2B  Validation url
     |------------------------------------------
     */
-    'c2b_validate_callback' => 'https://b2d7e6a4.ngrok.io/api/validate?key=ertyuiowwws',
+//    'c2b_validate_callback' => 'https://b2d7e6a4.ngrok.io/api/validate?key=ertyuiowwws',
+    'c2b_validate_callback' => 'https://demo.taverngrill.co.ke/api/validate',
 
     /*-----------------------------------------
     |C2B confirmation url
     |------------------------------------------
     */
-    'c2b_confirm_callback' => 'https://b2d7e6a4.ngrok.io/api/confirm?key=ertyuiowwws',
+//    'c2b_confirm_callback' => 'https://b2d7e6a4.ngrok.io/api/confirm?key=ertyuiowwws',
+    'c2b_confirm_callback' => 'https://demo.taverngrill.co.ke/api/confirm',
 
     /*-----------------------------------------
     |B2C timeout url

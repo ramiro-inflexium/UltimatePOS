@@ -1,0 +1,2 @@
+[2021-01-10 15:22:13] local.EMERGENCY: ERROR: NOT ALLOWED: Mismatch between stock adjustment and purchase quantity. Product: CELLAR CASK WHITE 750ML SKU: 0029 Quantity: 1 Business: TAVERN GRILL AND LOUNGE Location: TAVERN LOUNGE  
+[2021-01-10 15:22:13] local.EMERGENCY: File:/var/www/UltimatePOS/app/Utils/TransactionUtil.phpLine:2572Message:ERROR: NOT ALLOWED: Mismatch between stock adjustment and purchase quantity. Product: CELLAR CASK WHITE 750ML SKU: 0029 Quantity: 1  

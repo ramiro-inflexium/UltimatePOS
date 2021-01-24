@@ -1,0 +1,4 @@
+[2021-01-12 08:57:00] local.EMERGENCY: File:/var/www/UltimatePOS/vendor/laravel/framework/src/Illuminate/Foundation/Application.phpLine:995Message:Unauthorized action.  
+[2021-01-12 16:20:06] local.EMERGENCY: File:/var/www/UltimatePOS/vendor/laravel/framework/src/Illuminate/Foundation/Application.phpLine:995Message:Unauthorized action.  
+[2021-01-12 16:21:32] local.EMERGENCY: File:/var/www/UltimatePOS/vendor/laravel/framework/src/Illuminate/Foundation/Application.phpLine:995Message:Unauthorized action.  
+[2021-01-12 16:43:41] local.EMERGENCY: File:/var/www/UltimatePOS/vendor/laravel/framework/src/Illuminate/Foundation/Application.phpLine:995Message:Unauthorized action.  

@@ -1,0 +1,4 @@
+[2021-01-14 13:04:58] local.EMERGENCY: File:/var/www/UltimatePOS/app/Http/Controllers/SellPosController.phpLine:919Message:Trying to get property 'status' of non-object  
+[2021-01-14 13:05:04] local.EMERGENCY: File:/var/www/UltimatePOS/app/Http/Controllers/SellPosController.phpLine:919Message:Trying to get property 'status' of non-object  
+[2021-01-14 13:05:26] local.EMERGENCY: File:/var/www/UltimatePOS/app/Http/Controllers/SellPosController.phpLine:919Message:Trying to get property 'status' of non-object  
+[2021-01-14 13:07:26] local.EMERGENCY: File:/var/www/UltimatePOS/app/Http/Controllers/SellPosController.phpLine:919Message:Trying to get property 'status' of non-object  

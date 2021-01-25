@@ -26,6 +26,7 @@
         "nwidart/laravel-modules": "^4.0",
         "pusher/pusher-php-server": "^4.1",
         "razorpay/razorpay": "2.*",
+        "safaricom/mpesa": "^1.0",
         "smodav/mpesa": "^5.2",
         "spatie/flysystem-dropbox": "^1.0",
         "spatie/laravel-activitylog": "^3.2",

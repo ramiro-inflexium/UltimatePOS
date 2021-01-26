@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMpesaC2bsTable extends Migration
+class CreateMpesaC2bTable extends Migration
 {
     /**
      * Run the migrations.

@@ -18,6 +18,7 @@ class MpesaController extends Controller
             $validation_url = route('api.mpesa.c2b.validate', $config['validation_key']);
             $short_code = $config['short_code'];
 
+//            dd($confirmation_url);
 
             $response = (new Registrar())->setShortCode($short_code)
                 ->setValidationUrl($validation_url)

@@ -25,10 +25,10 @@ Route::post('confirm', function(Request $request){
     \Log::info($request->getContent());
 });
 
-Route::group(['prefix' => 'api', 'as' => 'api.mpesa.', 'namespace' => 'Api\Mpesa'], function () {
+Route::group(['prefix' => 'v1', 'as' => 'api.mpesa.', 'namespace' => 'Api\Mpesa'], function () {
     Route::group(['as' => 'c2b.'], function () {
-        Route::get('/m-trx/confirm/{confirmation_key}', 'C2BController@confirmTrx')->name('confirm');
-        Route::get('/m-trx/validate/{validation_key}', 'C2BController@validateTrx')->name('validate');
+        Route::post('/m-trx/confirm/{confirmation_key}', 'C2BController@confirmTrx')->name('confirm');
+        Route::post('/m-trx/validate/{validation_key}', 'C2BController@validateTrx')->name('validate');
 
     });
 });

@@ -52,6 +52,13 @@ class AdminSidebarMenu
                                 ['icon' => 'fa fas fa-handshake', 'active' => request()->segment(1) == 'sales-commission-agents']
                             );
                         }
+                        if (auth()->user()->can('user.create')) {
+                            $sub->url(
+                                action('Mpesa\C2BController@index'),
+                                'Mpesa c2b',
+                                ['icon' => 'fa fas fa-handshake', 'active' => request()->segment(1) == 'sales-commission-agents']
+                            );
+                        }
                     },
                     ['icon' => 'fa fas fa-users']
                 )->order(10);

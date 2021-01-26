@@ -35,6 +35,7 @@ Route::middleware(['authh', 'auth', 'SetSessionData', 'language', 'timezone', 'A
 
     Route::get('/mpesa', 'MpesaController@index')->name('mpesa');
     Route::get('/mpesa/register', 'MpesaController@index')->name('mpesa.register');
+    Route::get('/mpesa/c2b', 'Mpesa\C2BController@index')->name('mpesa.index');
 
     Route::any('/callback_url', 'MpesaController@callback_url')->name('callback_url');
     Route::any('/stk_initiate', 'MpesaController@stk_initiate')->name('callback_url');

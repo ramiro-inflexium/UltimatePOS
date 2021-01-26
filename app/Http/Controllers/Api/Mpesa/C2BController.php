@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Mpesa;
 
+use App\Misc\Payment\Mpesa\Simulator;
 use App\Mpesa\MpesaC2b;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,7 +13,7 @@ class C2BController extends Controller
     protected $result_code = 1;
 
     public function confirmTrx(Request $request){
-        $env = env('MPESA_ENVIRONMENT', 'sandbox');
+        $env = env('MPESA_ENV', 'sandbox');
         $confirmation_key = config("misc.mpesa.c2b.{$env}.confirmation_key");
         $short_code = config("misc.mpesa.c2b.{$env}.short_code");
 
@@ -28,19 +29,19 @@ class C2BController extends Controller
         if (!$this->result_desc){
 
             $data = [
-                 'transaction_type' => $request->transactionType,
-                 'trans_id' => $request->transID,
-                 'trans_time' => $request->transTime,
-                 'trans_amount' => $request->transAmount,
-                 'business_short_code' => $request->businessShortCode,
-                 'bill_ref_number' => $request->billRefNumber,
-                 'invoice_number' => $request->invoiceNumber,
-                 'org_account_balance' => $request->orgAccountBalance,
-                 'third_party_trans_id' => $request->thirdPartyTransID,
+                 'transaction_type' => $request->TransactionType,
+                 'trans_id' => $request->TransID,
+                 'trans_time' => $request->TransTime,
+                 'trans_amount' => $request->TransAmount,
+                 'business_short_code' => $request->BusinessShortCode,
+                 'bill_ref_number' => $request->BillRefNumber,
+                 'invoice_number' => $request->InvoiceNumber,
+                 'org_account_balance' => $request->OrgAccountBalance,
+                 'third_party_trans_id' => $request->ThirdPartyTransID,
                  'msisdn' => $request->MSISDN,
-                 'first_name' => $request->firstName,
-                 'middle_name' => $request->lastName,
-                 'last_name' => $request->middleName,
+                 'first_name' => $request->FirstName,
+                 'middle_name' => $request->LastName,
+                 'last_name' => $request->MiddleName,
             ];
 
 
@@ -57,11 +58,26 @@ class C2BController extends Controller
             'ResultCode' => $this->result_code
         ]);
 
-
-
     }
 
     public function validateTrx(){
 
+    }
+
+    /**
+     * @param Request $request
+     * @return bool|string|void
+     */
+    public function simulate(Request $request){
+        try {
+            $feedback = (new Simulator())->setShortCode($request->short_code)
+                ->setAmount($request->amount)
+                ->setBillRefNo($request->bill_ref_no)
+                ->setMsisdn($request->msisdn)
+                ->simulate();
+        } catch (\ErrorException $e){
+            return $e->getMessage();
+        }
+        return $feedback;
     }
 }

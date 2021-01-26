@@ -15,7 +15,7 @@ class Validator
      * @throws \ErrorException
      */
 
-    public function validateEndpoints(string $env){
+    protected function validateEndpoints(string $env){
         if (!$this->endpoint){
             if (!array_key_exists($env, $this->default_endpoints)){
                 throw new \ErrorException('End point missing');

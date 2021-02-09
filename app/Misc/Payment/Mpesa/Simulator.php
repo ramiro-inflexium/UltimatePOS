@@ -29,8 +29,6 @@ class Simulator extends Validator
             throw new \ErrorException($e->getMessage());
         }
 
-
-
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $this->endpoint);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json','Authorization:Bearer '.$token));
@@ -51,7 +49,6 @@ class Simulator extends Validator
         curl_setopt($curl, CURLOPT_HEADER, false);
 
         return curl_exec($curl);
-
     }
 
     /**

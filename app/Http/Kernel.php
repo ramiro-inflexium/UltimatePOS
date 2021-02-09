@@ -65,6 +65,7 @@ class Kernel extends HttpKernel
         'EcomApi' => \App\Http\Middleware\EcomApi::class,
         'AdminSidebarMenu' => \App\Http\Middleware\AdminSidebarMenu::class,
         'superadmin' => \App\Http\Middleware\Superadmin::class,
+        'IsInstalled' => \App\Http\Middleware\IsInstalled::class,
     ];
     /**
      * The priority-sorted list of middleware.

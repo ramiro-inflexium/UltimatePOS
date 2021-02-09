@@ -33,10 +33,12 @@
 	        }
 	    });
 
-	    if ($('textarea#instructions').length > 0) {
-	        CKEDITOR.config.height = 120;
-	        CKEDITOR.replace('instructions');
-	    }
+
+        if ($('textarea#instructions').length > 0) {
+            tinymce.init({
+                selector: 'textarea#instructions',
+            });
+        }
 
 		if ($('#search_product').length) {
 			initialize_search($('#search_product'));

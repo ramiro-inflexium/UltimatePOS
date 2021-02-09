@@ -199,6 +199,14 @@ class AdminSidebarMenu
                                 ['icon' => 'fa fas fa-list', 'active' => request()->segment(1) == 'purchases' && request()->segment(2) == null]
                             );
                         }
+                        if (auth()->user()->can('manufacturing.access_recipe')) {
+                            $sub->url(
+                                action('\Modules\Manufacturing\Http\Controllers\RecipeController@index'),
+                                __('manufacturing::lang.recipe'),
+                                ['icon' => 'fa fas fa-cutlery', 'active' => request()->segment(1) == 'purchases' && request()->segment(2) == null]
+                            );
+                        }
+
                         if (auth()->user()->can('purchase.create')) {
                             $sub->url(
                                 action('PurchaseController@create'),

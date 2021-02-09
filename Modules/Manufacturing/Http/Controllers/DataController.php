@@ -54,9 +54,46 @@ class DataController extends Controller
 
     public function modifyAdminMenu(){
         Menu::modify('admin-sidebar-menu', function ($menu) {
-            $menu->dropdown("Manufacturing", function ($sub) {
-                $sub->url( url('manufacturing/recipe'), "Manufacturing", ['icon' => 'fa fa-list', 'active' => "conditions to make menu active"]);
-            });
+
+            //Manufacturing dropdown
+            if (auth()->user()->can('manufacturing.access_recipe') || auth()->user()->can('manufacturing.access_production') ) {
+                $menu->dropdown(
+                    __('manufacturing::lang.manufacturing'),
+                    function ($sub) {
+                        if (auth()->user()->can('manufacturing.access_recipe')) {
+                            $sub->url(
+                                action('\Modules\Manufacturing\Http\Controllers\RecipeController@index'),
+                                __('manufacturing::lang.recipe'),
+                                ['icon' => 'fa fas fa-list', 'active' => request()->segment(1) == 'manufacturing' && request()->segment(2) == 'recipe']
+                            );
+                        }
+                        if (auth()->user()->can('manufacturing.access_production')) {
+                            $sub->url(
+                                action('\Modules\Manufacturing\Http\Controllers\ProductionController@index'),
+                                __('manufacturing::lang.production'),
+                                ['icon' => 'fa fas fa-arrow-right', 'active' => request()->segment(1) == 'manufacturing' && request()->segment(2) == 'production' && request()->segment(3) == null]
+                            );
+                            $sub->url(
+                                action('\Modules\Manufacturing\Http\Controllers\ProductionController@create'),
+                                __('manufacturing::lang.add_production'),
+                                ['icon' => 'fa fas fa-arrow-right', 'active' => request()->segment(1) == 'manufacturing' && request()->segment(2) == 'production' && request()->segment(3) == 'create']
+                            );
+                            $sub->url(
+                                action('\Modules\Manufacturing\Http\Controllers\SettingsController@index'),
+                                __('messages.settings'),
+                                ['icon' => 'fa fas fa-arrow-right', 'active' => request()->segment(1) == 'manufacturing' && request()->segment(2) == 'settings']
+                            );
+                            $sub->url(
+                                action('\Modules\Manufacturing\Http\Controllers\ProductionController@getManufacturingReport'),
+                                __('manufacturing::lang.manufacturing_report'),
+                                ['icon' => 'fa fas fa-arrow-right', 'active' => request()->segment(1) == 'manufacturing' && request()->segment(2) == 'report']
+                            );
+                        }
+
+                    },
+                    ['icon' => 'fa fas fa-industry', 'id' => 'tour_step6']
+                )->order(22);
+            }
         });
     }
 }

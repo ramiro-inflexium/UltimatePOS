@@ -45,7 +45,7 @@
     @endcomponent
 </section>
 <!-- /.content -->
-<div class="modal fade" id="recipe_modal" tabindex="-1" role="dialog" 
+<div class="modal fade" id="recipe_modal" tabindex="-1" role="dialog"
     aria-labelledby="gridSystemModalLabel">
 </div>
 @stop

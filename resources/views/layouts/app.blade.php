@@ -22,7 +22,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>@yield('title') - {{ Session::get('business.name') }}</title>
-        
+
         @include('layouts.partials.css')
 
         @yield('css')
@@ -32,7 +32,7 @@
 
         <!-- empty div for vuejs -->
         <div id="app"></div>
-        
+
         <div class="wrapper thetop">
             <script type="text/javascript">
                 if(localStorage.getItem("upos_sidebar_collapse") == 'true'){
@@ -76,7 +76,7 @@
                 <!-- This will be printed -->
                 <section class="invoice print_section" id="receipt_section">
                 </section>
-                
+
             </div>
             @include('home.todays_profit_modal')
             <!-- /.content-wrapper -->
@@ -103,7 +103,7 @@
         </div>
 
         @include('layouts.partials.javascripts')
-        <div class="modal fade view_modal" tabindex="-1" role="dialog" 
+        <div class="modal fade view_modal" tabindex="-1" role="dialog"
         aria-labelledby="gridSystemModalLabel"></div>
     </body>
 
